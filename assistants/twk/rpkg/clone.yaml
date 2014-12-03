@@ -15,7 +15,7 @@ args:
       'package to clone'
   branch:
     flags: [branch]
-    action: store_const
+    action: store
     help:
       'branch to checkout'
 run:
