@@ -1,0 +1,21 @@
+rpkg dap
+========
+
+## Installation
+
+Install it using da's package manager:
+
+```
+da pkg install rpkg
+```
+
+## Usage
+
+There is only one command implemented at the moment:
+
+```
+da twk rpkg clone f21 devassistant
+```
+
+This will clone the package from distgit, checks out specific branch and fetches sources.
+
