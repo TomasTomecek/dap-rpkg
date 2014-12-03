@@ -1,0 +1,26 @@
+args:
+  bin:
+    flags:
+      - -b
+      - --bin
+    action: store_const
+    const: fedpkg
+    default: 'fedpkg'
+    help:
+      'rpkg binary (fedpkg by default)'
+  package:
+    flags: [package]
+    action: store
+    help:
+      'package to clone'
+  branch:
+    flags: [branch]
+    action: store_const
+    help:
+      'branch to checkout'
+run:
+  - cl: $bin clone $package
+  - cl: cd $package
+  - cl: git checkout $branch
+  - cl: $bin sources
+

@@ -1,0 +1,13 @@
+package_name: rpkg
+version: 0.1
+license: GPLv2+
+authors: [Tomas Tomecek <ttomecek@redhat.com>]
+homepage: https://github.com/TomasTomecek/dap-rpkg
+summary: Wrapper on top fedpkg (rpkg).
+bugreports: https://github.com/TomasTomecek/dap-rpkg/issues
+description: |
+    At the moment there is only one command implemented:
+
+        da twk rpkg clone <branch> <package>
+
+    This will clone the package from distgit, checks out specific branch and fetches sources.
