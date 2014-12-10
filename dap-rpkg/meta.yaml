@@ -3,7 +3,7 @@ version: 0.1
 license: GPLv2+
 authors: [Tomas Tomecek <ttomecek@redhat.com>]
 homepage: https://github.com/TomasTomecek/dap-rpkg
-summary: Wrapper on top fedpkg (rpkg).
+summary: Wrapper on top of fedpkg (rpkg).
 bugreports: https://github.com/TomasTomecek/dap-rpkg/issues
 description: |
     At the moment there is only one command implemented:
