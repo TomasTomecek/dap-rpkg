@@ -8,6 +8,11 @@ args:
       default: 'fedpkg'
       help:
         'rpkg binary (fedpkg by default)'
+  - prep:
+      flags: [--prep]
+      action: store_true
+      help:
+        'run the prep section'
   - package:
       flags: [package]
       action: store
@@ -23,4 +28,7 @@ run:
   - cl: cd $package
   - cl: git checkout $branch
   - cl: $bin sources
+  - if defined $prep:
+    - log_i: Executing %prep
+    - cl_i: $bin prep
 
