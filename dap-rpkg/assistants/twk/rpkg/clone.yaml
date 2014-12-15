@@ -1,26 +1,34 @@
 args:
-  bin:
-    flags:
-      - -b
-      - --bin
-    action: store_const
-    const: fedpkg
-    default: 'fedpkg'
-    help:
-      'rpkg binary (fedpkg by default)'
-  package:
-    flags: [package]
-    action: store
-    help:
-      'package to clone'
-  branch:
-    flags: [branch]
-    action: store
-    help:
-      'branch to checkout'
+  - bin:
+      flags:
+        - -b
+        - --bin
+      action: store_const
+      const: fedpkg
+      default: 'fedpkg'
+      help:
+        'rpkg binary (fedpkg by default)'
+  - prep:
+      flags: [--prep]
+      action: store_true
+      help:
+        'run the prep section'
+  - package:
+      flags: [package]
+      action: store
+      help:
+        'package to clone'
+  - branch:
+      flags: [branch]
+      action: store
+      help:
+        'branch to checkout'
 run:
   - cl: $bin clone $package
   - cl: cd $package
   - cl: git checkout $branch
   - cl: $bin sources
+  - if defined $prep:
+    - log_i: Executing %prep
+    - cl_i: $bin prep
 
